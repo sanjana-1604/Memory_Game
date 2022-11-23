@@ -1,0 +1,73 @@
+*
+{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+html{
+    min-height:100vh;
+}
+body{
+    background:radial-gradient(#ebf4f5, #b5c6e0) ;
+    color: #103783;
+    font-family: 'Permanent Marker', cursive;
+    
+}
+.game_title
+{     
+    text-align: center;
+}
+.how2play
+{
+    text-align: center;
+}
+.how2play h4,p{
+    display:inline;    
+}
+.game_container
+{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 2rem;
+    justify-content: center;
+    align-content: center;
+}
+.game_info_container
+{
+    display:flex;
+    justify-content: space-between;
+    grid-column: 1/-1;
+}
+.card
+{
+    background-color: #103783;
+    height: 175px;
+    width: 125px;
+    display: grid;
+    justify-items: center;
+    align-content: center;  
+}
+.card.clicked
+{
+    background-color: #9bafd9;
+}
+img{
+    width: 80%;
+    height: 120px;
+    justify-self: center;
+    align-self: center;
+    opacity: 0;
+}
+.card.clicked img,
+.card.matched img
+{
+    opacity: 1;
+}
+.card.matched
+{
+    background-color: #748cb2;
+}
+.card.notMatched
+{
+    background-color: #ee2e31;
+}
