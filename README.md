@@ -2,6 +2,9 @@
 ## Description
 Created simple memory came using HTML, CSS, JS
 
+## Deployed link
+ https://sanjana-1604.github.io/Memory_Game/
+
 ## Installation
 
 N/A
