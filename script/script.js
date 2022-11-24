@@ -29,20 +29,20 @@ cards.forEach((card) => {
             flipCount++;
             flipCounter.innerHTML = flipCount;
             display_time = document.getElementById("time_remaining").innerHTML;
-            var set_timer = setInterval(() => {
+            // var set_timer = setInterval(() => {
               
-                if (display_time == 0) {
-                    clearInterval(set_timer);
-                    reset();
-                    alert("Time ends");
+            //     if (display_time == 0) {
+            //         clearInterval(set_timer);
+            //         reset();
+            //         alert("Time ends");
                     
-                }
-                else {
-                    display_time -= 1;
-                    document.getElementById("time_remaining").innerHTML = display_time;
-                }
+            //     }
+            //     else {
+            //         display_time -= 1;
+            //         document.getElementById("time_remaining").innerHTML = display_time;
+            //     }
 
-            }, 1000);
+            // }, 1000);
 
         }
         else {
