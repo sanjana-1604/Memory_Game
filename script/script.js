@@ -29,20 +29,19 @@ cards.forEach((card) => {
             flipCount++;
             flipCounter.innerHTML = flipCount;
             display_time = document.getElementById("time_remaining").innerHTML;
-            // var set_timer = setInterval(() => {
-              
-            //     if (display_time == 0) {
-            //         clearInterval(set_timer);
-            //         reset();
-            //         alert("Time ends");
-                    
-            //     }
-            //     else {
-            //         display_time -= 1;
-            //         document.getElementById("time_remaining").innerHTML = display_time;
-            //     }
+            var set_timer = setInterval(() => {
 
-            // }, 1000);
+                if (display_time == 0) {
+                    alert("Time's up");
+                    clearInterval(set_timer);
+                    location.reload();
+                }
+                else {
+                    display_time -= 1;
+                    document.getElementById("time_remaining").innerHTML = display_time;
+                }
+
+            }, 1000);
 
         }
         else {
@@ -77,19 +76,3 @@ cards.forEach((card) => {
     });
 });
 
-function reset() {
-
-    flipCounter.innerHTML = 0;
-    cardClickedCount = 0;
-    firstSelectedCard = "";
-    secondSelectedCard = "";
-    flipCounter.innerHTML = 0;
-    cards.forEach((card) => {
-        card.classList.add("start");
-        card.classList.remove("clicked");
-        card.classList.remove("matched");
-        card.classList.remove("notMatched");
-        document.getElementById("time_remaining").innerHTML =100;
-       
-    });
-}
