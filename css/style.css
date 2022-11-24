@@ -47,6 +47,13 @@ body{
     justify-items: center;
     align-content: center;  
 }
+.card.start
+{
+    background-color: #103783;
+}
+.card.start img{
+    opacity: 0;
+}
 .card.clicked
 {
     background-color: #9bafd9;
