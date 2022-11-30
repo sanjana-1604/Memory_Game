@@ -2,18 +2,9 @@ var cardClickedCount = 0;
 var firstSelectedCard = "";
 var secondSelectedCard = "";
 var flipCount = 0;
-
-//var card_section = document.getElementById("card_container");
-
-// var image = document.createElement("img");
-// image.src = "https://media.geeksforgeeks.org/wp-content/uploads/20190529122828/bs21.png";
-// card_section.appendChild(image); 
-
-// for (var i =0 ; i<16; i++)
-// {
+var timeRemaining = document.getElementById("time_remaining");
 
 
-// }
 let flipCounter = document.getElementById("flip");
 let display_time = 0;
 
@@ -23,26 +14,24 @@ cards.forEach((card) => {
     card.addEventListener("click", () => {
         card.classList.add("clicked");
 
+
         if (cardClickedCount == 0) {
             firstSelectedCard = card.getAttribute("class").split(" ")[1];
             cardClickedCount++;
             flipCount++;
             flipCounter.innerHTML = flipCount;
-            display_time = document.getElementById("time_remaining").innerHTML;
-            var set_timer = setInterval(() => {
+            display_time = timeRemaining.innerHTML;
 
-                if (display_time == 0) {
+            var set_timer = setInterval(() => {
+                display_time -= 1;
+                timeRemaining.innerHTML = display_time;
+
+                if (display_time === 0) {                    
                     alert("Time's up");
-                    clearInterval(set_timer);
+                    clearTimeout(set_timer);
                     location.reload();
                 }
-                else {
-                    display_time -= 1;
-                    document.getElementById("time_remaining").innerHTML = display_time;
-                }
-
             }, 1000);
-
         }
         else {
             secondSelectedCard = card.getAttribute("class").split(" ")[1];
@@ -58,7 +47,6 @@ cards.forEach((card) => {
             }
             else {
                 const inCorrectCard = document.querySelectorAll(".card.clicked");
-
                 inCorrectCard.forEach((card) => {
                     card.classList.add("notMatched");
                 });
@@ -70,9 +58,7 @@ cards.forEach((card) => {
 
                 }, 800);
             }
-
         }
-
     });
 });
 
